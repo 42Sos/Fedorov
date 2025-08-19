@@ -1,2 +1,243 @@
-# Fedorov
-Посильная помощь Николаю Фёдорову
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь Николаю Федорову</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--
+    Структурный план страницы:
+    1. Hero: Призыв к действию.
+    2. About: Знакомство с Николаем.
+    3. Tragedy: Что произошло.
+    4. Current Battle: Текущая ситуация.
+    5. Needs: На что нужны средства.
+    6. Donation: Как помочь.
+    Такая повествовательная структура помогает вызвать сопереживание и мотивирует к помощи.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8; /* Теплый нейтральный фон */
+            color: #4A4A4A;
+        }
+        .bg-primary { background-color: #3B82F6; } /* Мягкий синий для акцентов и кнопок */
+        .bg-secondary { background-color: #EBF5FF; } /* Светло-голубой для выделения секций */
+        .text-accent { color: #10B981; } /* Приглушенный зеленый для маркеров списка */
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .section-title {
+            border-bottom: 2px solid #3B82F6;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .icon-symbol {
+            font-size: 3rem;
+            line-height: 1;
+            color: #3B82F6;
+        }
+        .copied-feedback {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-12 md:py-20">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">Спасём жизнь нашего друга</h1>
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mt-2">Николая Федорова!</h2>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                Человек, который всегда приходил на помощь другим, сегодня сам оказался в беде. Его жизнь зависит от нашей с вами поддержки.
+            </p>
+            <div class="mt-8">
+                <button onclick="scrollToDonation()" class="btn bg-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">
+                    Помочь Николаю
+                </button>
+            </div>
+        </section>
+
+        <!-- Who is Nikolai? -->
+        <section id="about" class="py-12 md:py-16 bg-white rounded-2xl shadow-sm">
+            <div class="max-w-4xl mx-auto px-6">
+                <h3 class="text-3xl font-bold text-center text-gray-800 section-title">Человек с огромным сердцем</h3>
+                <p class="mt-8 text-lg text-center text-gray-700 leading-relaxed">
+                    Многие знают Колю как человека, который никогда не проходил мимо чужой беды. Верный и отзывчивый друг, на чье крепкое плечо всегда можно было опереться. Активный общественный деятель, который всего себя посвящал помощи другим, всегда готовый прийти на выручку делом или мудрым советом. Его жизнелюбия и оптимизма хватало на всех.
+                </p>
+            </div>
+        </section>
+
+        <!-- What Happened? -->
+        <section id="tragedy" class="py-12 md:py-16">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold text-gray-800 section-title">Что случилось?</h3>
+                <p class="mt-8 text-lg text-gray-700 leading-relaxed">
+                    Внезапно в жизнь Николая пришла страшная беда. Коварная болезнь — **клещевой энцефалит** — нанесла сокрушительный удар по центральной нервной системе. Вирус вызвал обширное воспаление головного и спинного мозга, что привело к необратимым и катастрофическим последствиям.
+                </p>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-secondary rounded-lg">
+                        <div class="icon-symbol">🧠</div>
+                        <h4 class="font-bold text-xl mt-4">Поражение мозга</h4>
+                        <p class="mt-2 text-gray-600">Поврежден ствол мозга, отвечающий за глотание, мимику и движение глаз.</p>
+                    </div>
+                    <div class="p-6 bg-secondary rounded-lg">
+                        <div class="icon-symbol">🫁</div>
+                        <h4 class="font-bold text-xl mt-4">Остановка дыхания</h4>
+                        <p class="mt-2 text-gray-600">Паралич дыхательных мышц и поражение дыхательного центра в мозге.</p>
+                    </div>
+                    <div class="p-6 bg-secondary rounded-lg">
+                        <div class="icon-symbol">🏃‍♂️</div>
+                        <h4 class="font-bold text-xl mt-4">Полный паралич</h4>
+                        <p class="mt-2 text-gray-600">Повреждение спинного мозга привело к потере контроля над мышцами всего тела.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Current Battle -->
+        <section id="current-state" class="py-12 md:py-16 bg-white rounded-2xl shadow-sm">
+            <div class="max-w-4xl mx-auto px-6">
+                <h3 class="text-3xl font-bold text-center text-gray-800 section-title">Борьба за каждый день</h3>
+                <p class="mt-8 text-lg text-gray-700 leading-relaxed">
+                    Сегодня наш сильный, деятельный, полный планов Коля оказался заперт в собственном теле. Он в полном сознании, но не может двигаться, говорить и даже дышать самостоятельно. Его мир сузился до стен палаты, а общение с близкими происходит через движение глаз — единственный доступный ему способ показать, что он всё слышит и понимает.
+                </p>
+                <div class="mt-8 text-lg text-gray-700 leading-relaxed">
+                    <h4 class="font-bold text-xl text-gray-800 mb-4">Каждый день — это испытание, требующее огромных сил и ресурсов:</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 font-bold text-2xl leading-none mt-1">✓</span>
+                            <div>
+                                <strong class="font-semibold text-gray-800">Дыхание:</strong> Каждый вздох поддерживается аппаратом ИВЛ. Это сложная система, требующая постоянного контроля и дорогостоящих расходных материалов.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 font-bold text-2xl leading-none mt-1">✓</span>
+                            <div>
+                                <strong class="font-semibold text-gray-800">Питание:</strong> Жизненные силы он получает через гастростому — специальную трубку, через которую поступает лечебное питание, необходимое для поддержания организма.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 font-bold text-2xl leading-none mt-1">✓</span>
+                            <div>
+                                <strong class="font-semibold text-gray-800">Уход:</strong> Чтобы избежать осложнений, таких как пролежни и инфекции, необходим круглосуточный, квалифицированный уход. Это включает в себя гигиенические процедуры, массаж и переворачивание каждые несколько часов.
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="text-accent mr-3 font-bold text-2xl leading-none mt-1">✓</span>
+                            <div>
+                                <strong class="font-semibold text-gray-800">Сознание:</strong> Самое тяжелое испытание — это ясное сознание в обездвиженном теле. Николай всё чувствует и понимает, но не может выразить свои мысли и чувства словами.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mt-8 text-lg text-center text-gray-700 leading-relaxed bg-secondary p-6 rounded-lg">
+                    Несмотря на все трудности, Коля не сдается. В его глазах по-прежнему живет надежда. Эта надежда — на нашу с вами помощь. Поддержка друзей и неравнодушных людей дает ему силы продолжать эту тяжелейшую борьбу.
+                </p>
+            </div>
+        </section>
+
+        <!-- What is Needed? -->
+        <section id="needs" class="py-12 md:py-16">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold text-gray-800 section-title">На что пойдут собранные средства?</h3>
+                <p class="mt-8 text-lg text-gray-700 leading-relaxed">
+                    Семья и близкие делают всё возможное, но ресурсы не безграничны. Мы стоим перед лицом огромных ежедневных расходов, которые в одиночку нам не осилить. Ваша помощь жизненно необходима.
+                </p>
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <h4 class="font-bold text-xl">Медикаменты</h4>
+                        <p class="mt-2 text-gray-600">Постоянный прием препаратов для поддержания сердца и жизненных функций.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <h4 class="font-bold text-xl">Расходные материалы</h4>
+                        <p class="mt-2 text-gray-600">Материалы для ухода за трахеостомой, гастростомой, профилактики пролежней.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <h4 class="font-bold text-xl">Услуги сиделки</h4>
+                        <p class="mt-2 text-gray-600">Оплата круглосуточного ухода квалифицированного специалиста.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <h4 class="font-bold text-xl">Спецпитание</h4>
+                        <p class="mt-2 text-gray-600">Сбалансированные смеси для энтерального питания.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Help? -->
+        <section id="donation" class="py-12 md:py-20 bg-secondary rounded-2xl">
+            <div class="max-w-2xl mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold text-gray-800">Как помочь?</h3>
+                <p class="mt-6 text-lg text-gray-700">
+                    Каждое пожертвование, любая сумма – это ваш вклад в жизнь замечательного человека и капля надежды для его семьи.
+                </p>
+                <div class="mt-8 bg-white p-8 rounded-xl shadow-lg inline-block">
+                    <p class="text-gray-600">Перевод можно сделать по номеру телефона (СБП) или на карту Сбербанка:</p>
+                    <div class="my-4">
+                        <p class="text-sm text-gray-500">Получатель:</p>
+                        <p class="text-xl font-semibold text-gray-800">Фёдоров Алексей Николаевич</p>
+                    </div>
+                    <div class="relative mt-4">
+                        <input id="donationNumber" type="text" value="+79617147899" class="bg-gray-100 text-center text-2xl font-mono p-3 rounded-lg w-full" readonly>
+                        <button onclick="copyToClipboard()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-white px-3 py-1 rounded-md text-sm font-semibold">Копировать</button>
+                    </div>
+                    <div id="feedback" class="copied-feedback opacity-0 mt-2 text-sm text-accent font-semibold">Номер скопирован!</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 mt-12">
+        <p class="text-gray-500">Спасибо каждому, кто откликнется!</p>
+    </footer>
+
+    <script>
+        // Плавная прокрутка к секции пожертвований
+        function scrollToDonation() {
+            document.getElementById('donation').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Копирование номера в буфер обмена
+        function copyToClipboard() {
+            const donationNumberEl = document.getElementById('donationNumber');
+            // Выделяем текст в поле
+            donationNumberEl.select();
+            donationNumberEl.setSelectionRange(0, 99999); // Для мобильных устройств
+            
+            try {
+                // Используем document.execCommand для совместимости
+                document.execCommand('copy');
+                showFeedback();
+            } catch (err) {
+                console.error('Не удалось скопировать номер: ', err);
+                // Можно добавить резервный механизм или сообщение об ошибке для пользователя
+            }
+
+            // Снимаем выделение
+            window.getSelection().removeAllRanges();
+        }
+        
+        // Показываем сообщение "Номер скопирован!"
+        function showFeedback() {
+            const feedbackEl = document.getElementById('feedback');
+            feedbackEl.style.opacity = '1';
+            setTimeout(() => {
+                feedbackEl.style.opacity = '0';
+            }, 2000); // Сообщение исчезнет через 2 секунды
+        }
+    </script>
+
+</body>
+</html>
